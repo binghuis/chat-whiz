@@ -1,4 +1,5 @@
 'use client';
+import { ResizeHorizontalIcon } from '@src/icons/resize-horizontal';
 import 'client-only';
 import { MixedSizes, Panel, PanelGroup, PanelResizeHandle } from 'react-resizable-panels';
 
@@ -11,6 +12,7 @@ export default function PageLayout({ defaultLayout }: { defaultLayout: MixedSize
     <PanelGroup direction="horizontal" onLayout={onLayout} storage={localStorage}>
       <Panel
         order={0}
+        collapsible
         className="bg-slate-100 rounded-lg flex items-center justify-center text-center"
         defaultSizePercentage={defaultLayout[0].sizePercentage}
         maxSizePixels={180}
@@ -18,7 +20,9 @@ export default function PageLayout({ defaultLayout }: { defaultLayout: MixedSize
       >
         Left panel
       </Panel>
-      <PanelResizeHandle className="w-1 bg-slate-300" />
+      <PanelResizeHandle>
+        <ResizeHorizontalIcon />
+      </PanelResizeHandle>
       <Panel
         order={1}
         className="bg-slate-100 rounded-lg flex items-center justify-center text-center"
