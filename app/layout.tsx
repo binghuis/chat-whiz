@@ -1,6 +1,5 @@
 import '@src/styles/globals.css';
 import { Metadata } from 'next';
-import { Providers } from './providers';
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -8,19 +7,13 @@ export const metadata: Metadata = {
   keywords: [],
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-  login: React.ReactNode;
-  dashboard: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning>
       <body>
-        <Providers>
-          <div className="w-screen h-screen">{children}</div>
-        </Providers>
+        {/* <Providers> */}
+        <div className="w-screen h-screen">{children}</div>
+        {/* </Providers> */}
       </body>
     </html>
   );

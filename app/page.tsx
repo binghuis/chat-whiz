@@ -1,10 +1,10 @@
 import PageLayout from '@src/components/page-layout';
 import { cookies } from 'next/headers';
 import { MixedSizes } from 'react-resizable-panels';
+import 'server-only';
 
 export default function App() {
   const defaultLayout = getDefaultLayout();
-
   return (
     <main className="h-full">
       <PageLayout defaultLayout={defaultLayout} />
@@ -14,6 +14,7 @@ export default function App() {
 
 function getDefaultLayout(): MixedSizes[] {
   const layout = cookies().get('page:layout');
+
   if (layout) {
     return JSON.parse(layout.value);
   }
