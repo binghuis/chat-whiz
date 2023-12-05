@@ -8,7 +8,7 @@ export default function PageLayout({ defaultLayout }: { defaultLayout: MixedSize
   };
 
   return (
-    <PanelGroup direction="horizontal" onLayout={onLayout}>
+    <PanelGroup direction="horizontal" onLayout={onLayout} storage={localStorage}>
       <Panel
         order={0}
         className="bg-slate-100 rounded-lg flex items-center justify-center text-center"
